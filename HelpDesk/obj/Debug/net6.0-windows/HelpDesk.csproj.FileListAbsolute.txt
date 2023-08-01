@@ -4,7 +4,6 @@ C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\HelpDesk
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\HelpDesk.dll
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\HelpDesk.pdb
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.csproj.AssemblyReference.cache
-C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Form1.resources
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.csproj.GenerateResource.cache
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.AssemblyInfoInputs.cache
@@ -15,3 +14,9 @@ C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\refint\H
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.pdb
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.genruntimeconfig.cache
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\ref\HelpDesk.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Frm_Perfil.resources
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Frm_Pessoa.resources
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Frm_Login.resources
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Properties.Resources.resources
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Frm_Principal.resources
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Frm_Pergunta.resources
