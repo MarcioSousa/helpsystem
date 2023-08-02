@@ -28,72 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            BtnCadastrar = new Button();
+            BtnEditar = new Button();
+            BtnExcluir = new Button();
+            BtnConfirmar = new Button();
+            BtnCancelar = new Button();
             label1 = new Label();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
+            TxtNome = new TextBox();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
             DgvPessoas = new DataGridView();
+            TxtSenha = new TextBox();
+            label2 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvPessoas).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // BtnCadastrar
             // 
-            button1.Location = new Point(6, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
+            BtnCadastrar.Location = new Point(6, 22);
+            BtnCadastrar.Name = "BtnCadastrar";
+            BtnCadastrar.Size = new Size(75, 23);
+            BtnCadastrar.TabIndex = 0;
+            BtnCadastrar.Text = "Cadastrar";
+            BtnCadastrar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnEditar
             // 
-            button2.Location = new Point(87, 22);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = true;
+            BtnEditar.Location = new Point(87, 22);
+            BtnEditar.Name = "BtnEditar";
+            BtnEditar.Size = new Size(75, 23);
+            BtnEditar.TabIndex = 1;
+            BtnEditar.Text = "Editar";
+            BtnEditar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BtnExcluir
             // 
-            button3.Location = new Point(168, 22);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 2;
-            button3.Text = "Excluir";
-            button3.UseVisualStyleBackColor = true;
+            BtnExcluir.Location = new Point(168, 22);
+            BtnExcluir.Name = "BtnExcluir";
+            BtnExcluir.Size = new Size(75, 23);
+            BtnExcluir.TabIndex = 2;
+            BtnExcluir.Text = "Excluir";
+            BtnExcluir.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BtnConfirmar
             // 
-            button4.Location = new Point(247, 66);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 28);
-            button4.TabIndex = 3;
-            button4.Text = "Confirmar";
-            button4.UseVisualStyleBackColor = true;
+            BtnConfirmar.Location = new Point(247, 81);
+            BtnConfirmar.Name = "BtnConfirmar";
+            BtnConfirmar.Size = new Size(75, 28);
+            BtnConfirmar.TabIndex = 3;
+            BtnConfirmar.Text = "Confirmar";
+            BtnConfirmar.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // BtnCancelar
             // 
-            button5.Location = new Point(328, 66);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 28);
-            button5.TabIndex = 4;
-            button5.Text = "Cancelar";
-            button5.UseVisualStyleBackColor = true;
+            BtnCancelar.Location = new Point(328, 81);
+            BtnCancelar.Name = "BtnCancelar";
+            BtnCancelar.Size = new Size(75, 28);
+            BtnCancelar.TabIndex = 4;
+            BtnCancelar.Text = "Cancelar";
+            BtnCancelar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 19);
+            label1.Location = new Point(6, 16);
             label1.Name = "label1";
             label1.Size = new Size(40, 15);
             label1.TabIndex = 5;
@@ -101,28 +103,30 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(button5);
-            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(TxtSenha);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(TxtNome);
+            groupBox1.Controls.Add(BtnCancelar);
+            groupBox1.Controls.Add(BtnConfirmar);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 77);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(409, 100);
+            groupBox1.Size = new Size(409, 120);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             // 
-            // textBox1
+            // TxtNome
             // 
-            textBox1.Location = new Point(6, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(397, 23);
-            textBox1.TabIndex = 6;
+            TxtNome.Location = new Point(6, 34);
+            TxtNome.Name = "TxtNome";
+            TxtNome.Size = new Size(397, 23);
+            TxtNome.TabIndex = 6;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button1);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(button3);
+            groupBox2.Controls.Add(BtnCadastrar);
+            groupBox2.Controls.Add(BtnEditar);
+            groupBox2.Controls.Add(BtnExcluir);
             groupBox2.Location = new Point(12, 12);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(409, 59);
@@ -132,9 +136,9 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(DgvPessoas);
-            groupBox3.Location = new Point(12, 183);
+            groupBox3.Location = new Point(12, 203);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(409, 255);
+            groupBox3.Size = new Size(409, 235);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
             // 
@@ -144,8 +148,24 @@
             DgvPessoas.Location = new Point(6, 22);
             DgvPessoas.Name = "DgvPessoas";
             DgvPessoas.RowTemplate.Height = 25;
-            DgvPessoas.Size = new Size(397, 227);
+            DgvPessoas.Size = new Size(397, 207);
             DgvPessoas.TabIndex = 0;
+            // 
+            // TxtSenha
+            // 
+            TxtSenha.Location = new Point(6, 86);
+            TxtSenha.Name = "TxtSenha";
+            TxtSenha.Size = new Size(235, 23);
+            TxtSenha.TabIndex = 8;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 68);
+            label2.Name = "label2";
+            label2.Size = new Size(39, 15);
+            label2.TabIndex = 7;
+            label2.Text = "Senha";
             // 
             // Frm_Pessoa
             // 
@@ -169,16 +189,18 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button BtnCadastrar;
+        private Button BtnEditar;
+        private Button BtnExcluir;
+        private Button BtnConfirmar;
+        private Button BtnCancelar;
         private Label label1;
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox TxtNome;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private DataGridView DgvPessoas;
+        private TextBox TxtSenha;
+        private Label label2;
     }
 }

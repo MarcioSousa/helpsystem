@@ -20,3 +20,14 @@ C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Properties.Resources.resources
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Frm_Principal.resources
 C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.Frm_Pergunta.resources
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\Control.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\Model.dll
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\Control.pdb
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\bin\Debug\net6.0-windows\Model.pdb
+C:\Users\Marcio\source\repos\HelpDesk\HelpDesk\obj\Debug\net6.0-windows\HelpDesk.csproj.CopyComplete

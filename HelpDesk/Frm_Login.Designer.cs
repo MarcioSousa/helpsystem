@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
             BtnAcessar = new Button();
             TxtSenha = new TextBox();
             TxtLogin = new TextBox();
@@ -57,8 +56,10 @@
             // 
             TxtSenha.Location = new Point(58, 51);
             TxtSenha.Name = "TxtSenha";
+            TxtSenha.PasswordChar = '*';
             TxtSenha.Size = new Size(285, 23);
             TxtSenha.TabIndex = 1;
+            TxtSenha.Text = "abcd";
             // 
             // TxtLogin
             // 
@@ -66,6 +67,7 @@
             TxtLogin.Name = "TxtLogin";
             TxtLogin.Size = new Size(285, 23);
             TxtLogin.TabIndex = 2;
+            TxtLogin.Text = "José";
             // 
             // label1
             // 
@@ -95,6 +97,7 @@
             BtnFechar.TabIndex = 5;
             BtnFechar.Text = "Fechar";
             BtnFechar.UseVisualStyleBackColor = true;
+            BtnFechar.Click += BtnFechar_Click;
             // 
             // groupBox1
             // 
@@ -120,7 +123,6 @@
             label3.Size = new Size(318, 21);
             label3.TabIndex = 7;
             label3.Text = "BEM VINDO AO HELPDESK, COLABORADOR";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -132,11 +134,10 @@
             label4.Size = new Size(237, 21);
             label4.TabIndex = 8;
             label4.Text = "SUA PLATAFORMA DE DÚVIDAS.";
-            label4.Click += label4_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.logo;
             pictureBox1.Location = new Point(155, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(108, 100);
