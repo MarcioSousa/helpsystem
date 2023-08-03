@@ -67,7 +67,7 @@ namespace HelpDesk
                 if (TxtPergunta.Text != "" && NupUrgencia.Value != 0 && TxtTituloAssunto.Text != "")
                 {
                     acessoSqlServer.LimparParametros();
-                    acessoSqlServer.ExecutarManipulacao(CommandType.Text, "INSERT INTO PERGUNTA (questao, dificuldade, pessoa, setor) VALUES ('" + TxtPergunta.Text + "', " + NupUrgencia.Value + ", " + pessoa.Id_pessoa + ", " + botaoSelecionado + ")");
+                    acessoSqlServer.ExecutarManipulacao(CommandType.Text, "INSERT INTO PERGUNTA (titulo, questao, dificuldade, pessoa, setor) VALUES ('" + TxtTituloAssunto.Text + "','" + TxtPergunta.Text + "', " + NupUrgencia.Value + ", " + pessoa.Id_pessoa + ", " + botaoSelecionado + ")");
                     MessageBox.Show("Pergunta inserida com sucesso!");
                     this.Close();
                 }

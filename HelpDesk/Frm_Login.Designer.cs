@@ -160,6 +160,7 @@
             Name = "Frm_Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Formulário de Login";
+            Load += Frm_Login_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

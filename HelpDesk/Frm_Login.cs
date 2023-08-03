@@ -43,12 +43,10 @@ namespace HelpDesk
                             Frm_Principal principal = new Frm_Principal(this, pessoa);
                             principal.ShowDialog();
                             this.Close();
-                            break;
                         }
                     }
                     t++;
                 }
-
             }
             catch (Exception ex)
             {
@@ -56,11 +54,13 @@ namespace HelpDesk
             }
 
         }
-
         private void BtnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void Frm_Login_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
