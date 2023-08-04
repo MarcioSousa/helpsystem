@@ -32,7 +32,7 @@
             BtnEnviar = new Button();
             groupBox2 = new GroupBox();
             LblFuncionario = new Label();
-            TxtPergunta = new TextBox();
+            TxtResposta = new TextBox();
             label3 = new Label();
             NupUrgencia = new NumericUpDown();
             TxtTituloAssunto = new TextBox();
@@ -69,11 +69,12 @@
             BtnEnviar.TabIndex = 12;
             BtnEnviar.Text = "ENVIAR";
             BtnEnviar.UseVisualStyleBackColor = true;
+            BtnEnviar.Click += BtnEnviar_Click;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(LblFuncionario);
-            groupBox2.Controls.Add(TxtPergunta);
+            groupBox2.Controls.Add(TxtResposta);
             groupBox2.Controls.Add(label3);
             groupBox2.Location = new Point(12, 153);
             groupBox2.Name = "groupBox2";
@@ -90,13 +91,13 @@
             LblFuncionario.TabIndex = 15;
             LblFuncionario.Text = "label5";
             // 
-            // TxtPergunta
+            // TxtResposta
             // 
-            TxtPergunta.Location = new Point(6, 37);
-            TxtPergunta.Multiline = true;
-            TxtPergunta.Name = "TxtPergunta";
-            TxtPergunta.Size = new Size(473, 278);
-            TxtPergunta.TabIndex = 5;
+            TxtResposta.Location = new Point(6, 37);
+            TxtResposta.Multiline = true;
+            TxtResposta.Name = "TxtResposta";
+            TxtResposta.Size = new Size(473, 278);
+            TxtResposta.TabIndex = 5;
             // 
             // label3
             // 
@@ -186,6 +187,7 @@
             BtnComercial.TabIndex = 6;
             BtnComercial.Text = "COMERCIAL";
             BtnComercial.UseVisualStyleBackColor = true;
+            BtnComercial.Click += BtnComercial_Click;
             // 
             // BtnAdministrativo
             // 
@@ -236,7 +238,7 @@
         private Button BtnCancelar;
         private Button BtnEnviar;
         private GroupBox groupBox2;
-        private TextBox TxtPergunta;
+        private TextBox TxtResposta;
         private NumericUpDown NupUrgencia;
         private TextBox TxtTituloAssunto;
         private Label label3;

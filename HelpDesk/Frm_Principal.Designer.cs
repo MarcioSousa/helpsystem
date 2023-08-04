@@ -36,23 +36,23 @@
             label3 = new Label();
             BtnResposta = new Button();
             TxtResposta = new TextBox();
-            label1 = new Label();
+            LblPERGUNTA = new Label();
             TxtPergunta = new TextBox();
             label2 = new Label();
             LblFuncionario = new Label();
             DgvPerguntas = new DataGridView();
-            LblSetor = new Label();
-            label4 = new Label();
-            BtnNovaPergunta = new Button();
-            LblCodigoFuncionario = new Label();
-            label5 = new Label();
-            BtnCarregaTudo = new Button();
             ID_PERGUNTA = new DataGridViewTextBoxColumn();
             TITULO = new DataGridViewTextBoxColumn();
             DIFICULDADE = new DataGridViewTextBoxColumn();
             QUESTAO = new DataGridViewTextBoxColumn();
             PESSOAPERGUNTA = new DataGridViewTextBoxColumn();
             SETORPESSOA = new DataGridViewTextBoxColumn();
+            LblSetor = new Label();
+            label4 = new Label();
+            BtnNovaPergunta = new Button();
+            LblCodigoFuncionario = new Label();
+            label5 = new Label();
+            BtnCarregaTudo = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvPerguntas).BeginInit();
             SuspendLayout();
@@ -106,11 +106,11 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(BtnResposta);
             groupBox1.Controls.Add(TxtResposta);
-            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(LblPERGUNTA);
             groupBox1.Controls.Add(TxtPergunta);
-            groupBox1.Location = new Point(541, 40);
+            groupBox1.Location = new Point(541, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(463, 393);
+            groupBox1.Size = new Size(463, 421);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             // 
@@ -126,7 +126,7 @@
             // BtnResposta
             // 
             BtnResposta.AutoSize = true;
-            BtnResposta.Location = new Point(347, 362);
+            BtnResposta.Location = new Point(347, 390);
             BtnResposta.Name = "BtnResposta";
             BtnResposta.Size = new Size(110, 25);
             BtnResposta.TabIndex = 14;
@@ -140,17 +140,17 @@
             TxtResposta.Multiline = true;
             TxtResposta.Name = "TxtResposta";
             TxtResposta.ReadOnly = true;
-            TxtResposta.Size = new Size(451, 157);
+            TxtResposta.Size = new Size(451, 185);
             TxtResposta.TabIndex = 2;
             // 
-            // label1
+            // LblPERGUNTA
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 15);
-            label1.TabIndex = 1;
-            label1.Text = "PERGUNTA";
+            LblPERGUNTA.AutoSize = true;
+            LblPERGUNTA.Location = new Point(6, 19);
+            LblPERGUNTA.Name = "LblPERGUNTA";
+            LblPERGUNTA.Size = new Size(65, 15);
+            LblPERGUNTA.TabIndex = 1;
+            LblPERGUNTA.Text = "PERGUNTA";
             // 
             // TxtPergunta
             // 
@@ -194,6 +194,54 @@
             DgvPerguntas.Size = new Size(499, 282);
             DgvPerguntas.TabIndex = 8;
             DgvPerguntas.SelectionChanged += DgvPerguntas_SelectionChanged;
+            // 
+            // ID_PERGUNTA
+            // 
+            ID_PERGUNTA.DataPropertyName = "Id_pergunta";
+            ID_PERGUNTA.HeaderText = "CÓDIGO";
+            ID_PERGUNTA.Name = "ID_PERGUNTA";
+            ID_PERGUNTA.ReadOnly = true;
+            ID_PERGUNTA.Width = 70;
+            // 
+            // TITULO
+            // 
+            TITULO.DataPropertyName = "Titulo";
+            TITULO.HeaderText = "TITULO";
+            TITULO.Name = "TITULO";
+            TITULO.ReadOnly = true;
+            TITULO.Width = 310;
+            // 
+            // DIFICULDADE
+            // 
+            DIFICULDADE.DataPropertyName = "Dificuldade";
+            DIFICULDADE.HeaderText = "URGÊNCIA";
+            DIFICULDADE.Name = "DIFICULDADE";
+            DIFICULDADE.ReadOnly = true;
+            DIFICULDADE.Width = 90;
+            // 
+            // QUESTAO
+            // 
+            QUESTAO.DataPropertyName = "Questao";
+            QUESTAO.HeaderText = "QUESTÃO";
+            QUESTAO.Name = "QUESTAO";
+            QUESTAO.ReadOnly = true;
+            QUESTAO.Visible = false;
+            QUESTAO.Width = 310;
+            // 
+            // PESSOAPERGUNTA
+            // 
+            PESSOAPERGUNTA.DataPropertyName = "Pessoa";
+            PESSOAPERGUNTA.HeaderText = "PESSOA";
+            PESSOAPERGUNTA.Name = "PESSOAPERGUNTA";
+            PESSOAPERGUNTA.ReadOnly = true;
+            // 
+            // SETORPESSOA
+            // 
+            SETORPESSOA.DataPropertyName = "Setor";
+            SETORPESSOA.HeaderText = "SETOR";
+            SETORPESSOA.Name = "SETORPESSOA";
+            SETORPESSOA.ReadOnly = true;
+            SETORPESSOA.Visible = false;
             // 
             // LblSetor
             // 
@@ -257,58 +305,11 @@
             BtnCarregaTudo.UseVisualStyleBackColor = true;
             BtnCarregaTudo.Click += BtnCarregaTudo_Click;
             // 
-            // ID_PERGUNTA
-            // 
-            ID_PERGUNTA.DataPropertyName = "Id_pergunta";
-            ID_PERGUNTA.HeaderText = "CÓDIGO";
-            ID_PERGUNTA.Name = "ID_PERGUNTA";
-            ID_PERGUNTA.ReadOnly = true;
-            ID_PERGUNTA.Width = 70;
-            // 
-            // TITULO
-            // 
-            TITULO.DataPropertyName = "Titulo";
-            TITULO.HeaderText = "TITULO";
-            TITULO.Name = "TITULO";
-            TITULO.ReadOnly = true;
-            TITULO.Width = 310;
-            // 
-            // DIFICULDADE
-            // 
-            DIFICULDADE.DataPropertyName = "Dificuldade";
-            DIFICULDADE.HeaderText = "URGÊNCIA";
-            DIFICULDADE.Name = "DIFICULDADE";
-            DIFICULDADE.ReadOnly = true;
-            DIFICULDADE.Width = 90;
-            // 
-            // QUESTAO
-            // 
-            QUESTAO.DataPropertyName = "Questao";
-            QUESTAO.HeaderText = "QUESTÃO";
-            QUESTAO.Name = "QUESTAO";
-            QUESTAO.ReadOnly = true;
-            QUESTAO.Visible = false;
-            QUESTAO.Width = 310;
-            // 
-            // PESSOAPERGUNTA
-            // 
-            PESSOAPERGUNTA.DataPropertyName = "Pessoa";
-            PESSOAPERGUNTA.HeaderText = "PESSOA";
-            PESSOAPERGUNTA.Name = "PESSOAPERGUNTA";
-            PESSOAPERGUNTA.ReadOnly = true;
-            // 
-            // SETORPESSOA
-            // 
-            SETORPESSOA.DataPropertyName = "Setor";
-            SETORPESSOA.HeaderText = "SETOR";
-            SETORPESSOA.Name = "SETORPESSOA";
-            SETORPESSOA.ReadOnly = true;
-            // 
             // Frm_Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1016, 445);
+            ClientSize = new Size(1016, 446);
             Controls.Add(BtnCarregaTudo);
             Controls.Add(LblCodigoFuncionario);
             Controls.Add(label5);
@@ -344,7 +345,7 @@
         private Button BtnTecnologia;
         private GroupBox groupBox1;
         private PictureBox PbxExtrelas;
-        private Label label1;
+        private Label LblPERGUNTA;
         private TextBox TxtPergunta;
         private Label label2;
         private Label LblFuncionario;

@@ -129,9 +129,12 @@
             // NupUrgencia
             // 
             NupUrgencia.Location = new Point(415, 37);
+            NupUrgencia.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
+            NupUrgencia.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NupUrgencia.Name = "NupUrgencia";
             NupUrgencia.Size = new Size(64, 23);
             NupUrgencia.TabIndex = 4;
+            NupUrgencia.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // TxtTituloAssunto
             // 

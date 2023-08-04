@@ -17,11 +17,15 @@ namespace HelpDesk
     {
         AcessoSqlServer acessoSqlServer = new AcessoSqlServer();
         Pergunta pergunta = new Pergunta();
+        int pessoaResponder;
+        string nomeResponder;
 
-        public Frm_Resposta(Pergunta pergunta)
+        public Frm_Resposta(Pergunta pergunta, int pessoaResponder, string nomeFuncionarioResponder)
         {
             InitializeComponent();
             this.pergunta = pergunta;
+            this.pessoaResponder = pessoaResponder;
+            this.nomeResponder = nomeFuncionarioResponder;
         }
 
         private void CarregaNomeFuncionario()
@@ -74,12 +78,23 @@ namespace HelpDesk
             NupUrgencia.Value = Convert.ToInt32(pergunta.Dificuldade);
             CarregaNomeFuncionario();
             AjustaBotoes();
+            LblFuncionario.Text = nomeResponder;
         }
-
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void BtnEnviar_Click(object sender, EventArgs e)
+        {
+            acessoSqlServer.LimparParametros();
+            acessoSqlServer.ExecutarManipulacao(CommandType.Text, "INSERT INTO RESPOSTA (resposta, resolvido, pergunta, setor, pessoa) VALUES ('" + TxtResposta.Text + "', 'n', " + pergunta.Id_pergunta + ", " + pergunta.Setor + ", " + pessoaResponder + ")");
+            MessageBox.Show("Resposta inserida com sucesso!");
+            this.Close();
+        }
 
+        private void BtnComercial_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

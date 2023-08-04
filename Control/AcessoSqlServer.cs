@@ -36,7 +36,7 @@ namespace Control
                 SqlCommand sqlCommand = sqlConnection.CreateCommand();
                 sqlCommand.CommandType = commandType;
                 sqlCommand.CommandText = nomeStoreProcedureOuTextoSql;
-                sqlCommand.CommandTimeout = 7200;
+                sqlCommand.CommandTimeout = 500;
 
                 foreach (SqlParameter sqlParameter in sqlParameterCollection)
                 {

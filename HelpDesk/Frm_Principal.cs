@@ -88,8 +88,23 @@ namespace HelpDesk
             DgvPerguntas.Update();
             DgvPerguntas.Refresh();
         }
+        private string CarregaNomeSetor(int codSetor)
+        {
+            string nomeSetor = "";
+            int a = 0;
+            acessoSqlServer.LimparParametros();
+            DataTable dataTableSetor = acessoSqlServer.ExecutarConsulta(CommandType.Text, "SELECT nome FROM SETOR WHERE id_setor = " + codSetor);
+
+            foreach (DataRow linha in dataTableSetor.Rows)
+            {
+                nomeSetor = dataTableSetor.Rows[a][0].ToString();
+            }
+
+            return nomeSetor;
+        }
         private void CarregaRespostas(int codigoPergunta)
         {
+            List<Resposta> respostas = new List<Resposta>();
             TxtResposta.Text = "";
             int t = 0;
             acessoSqlServer.LimparParametros();
@@ -97,10 +112,16 @@ namespace HelpDesk
 
             foreach (DataRow linha in dataTablePerguntas.Rows)
             {
-                TxtResposta.Text += string.Format(dataTablePerguntas.Rows[t][6].ToString() + "{0}", Environment.NewLine);
+                TxtResposta.Text += string.Format(dataTablePerguntas.Rows[t][6].ToString() + " - " + CarregaNomeSetor(Convert.ToInt32(dataTablePerguntas.Rows[t][4])) + "{0}", Environment.NewLine);
                 TxtResposta.Text += string.Format(dataTablePerguntas.Rows[t][1].ToString() + "{0}{0}", Environment.NewLine);
+
+                Resposta resposta = new Resposta(Convert.ToInt32(dataTablePerguntas.Rows[t][0]), dataTablePerguntas.Rows[t][1].ToString(), dataTablePerguntas.Rows[t][2].ToString());
+
+                respostas.Add(resposta);
+
                 t++;
             }
+
         }
         private void Frm_Principal_Load(object sender, EventArgs e)
         {
@@ -109,46 +130,56 @@ namespace HelpDesk
         }
         private void FiltrargemBotao(string? setor)
         {
-            List<Pergunta> perguntas = new List<Pergunta> { };
-            DataTable dataTablePerguntas;
-            acessoSqlServer.LimparParametros();
+            try
+            {
+                List<Pergunta> perguntas = new List<Pergunta> { };
+                DataTable dataTablePerguntas;
+                acessoSqlServer.LimparParametros();
+                int setorNumero = 0;
 
-            if (setor == "OPERAÇÕES")
-            {
-                setor = "1";
+                if (setor == "OPERAÇÕES")
+                {
+                    setorNumero = 1;
+                }
+                else if (setor == "ADMINISTRATIVO")
+                {
+                    setorNumero = 2;
+                }
+                else if (setor == "COMERCIAL")
+                {
+                    setorNumero = 3;
+                }
+                else if (setor == "TECNOLOGIA")
+                {
+                    setorNumero = 4;
+                }
+
+                if (setor != null)
+                {
+                    dataTablePerguntas = acessoSqlServer.ExecutarConsulta(CommandType.Text, "SELECT id_pergunta, titulo, questao, dificuldade, pessoa, setor FROM PERGUNTA WHERE setor = " + setorNumero);
+                }
+                else
+                {
+                    dataTablePerguntas = acessoSqlServer.ExecutarConsulta(CommandType.Text, "SELECT id_pergunta, titulo, questao, dificuldade, pessoa, setor FROM PERGUNTA");
+                }
+
+                foreach (DataRow linha in dataTablePerguntas.Rows)
+                {
+                    Pergunta pergunta = new Pergunta(Convert.ToInt32(linha["id_pergunta"]), linha["titulo"].ToString(), linha["questao"].ToString(), Convert.ToInt32(linha["dificuldade"]), Convert.ToInt32(linha["pessoa"]), Convert.ToInt32(linha["setor"]));
+                    perguntas.Add(pergunta);
+                }
+
+                DgvPerguntas.DataSource = perguntas;
+
+                DgvPerguntas.Update();
+                DgvPerguntas.Refresh();
             }
-            else if (setor == "ADMINISTRATIVO")
+            catch (Exception ex)
             {
-                setor = "2";
-            }
-            else if (setor == "COMERCIAL")
-            {
-                setor = "3";
-            }
-            else if (setor == "TECNOLOGIA")
-            {
-                setor = "4";
+                MessageBox.Show("Erro: " + ex.Message);
+                throw;
             }
 
-            if (setor != null)
-            {
-                dataTablePerguntas = acessoSqlServer.ExecutarConsulta(CommandType.Text, "SELECT id_pergunta, titulo, questao, dificuldade, pessoa FROM PERGUNTA WHERE setor = '" + setor + "'");
-            }
-            else
-            {
-                dataTablePerguntas = acessoSqlServer.ExecutarConsulta(CommandType.Text, "SELECT id_pergunta, titulo, questao, dificuldade, pessoa , setor FROM PERGUNTA");
-            }
-
-            foreach (DataRow linha in dataTablePerguntas.Rows)
-            {
-                Pergunta pergunta = new Pergunta(Convert.ToInt32(linha["id_pergunta"]), linha["titulo"].ToString(), linha["questao"].ToString(), Convert.ToInt32(linha["dificuldade"]), Convert.ToInt32(linha["pessoa"]), Convert.ToInt32(linha["setor"]));
-                perguntas.Add(pergunta);
-            }
-
-            DgvPerguntas.DataSource = perguntas;
-
-            DgvPerguntas.Update();
-            DgvPerguntas.Refresh();
         }
         private void BtnOperacoes_Click(object sender, EventArgs e)
         {
@@ -174,9 +205,10 @@ namespace HelpDesk
         }
         private void DgvPerguntas_SelectionChanged(object sender, EventArgs e)
         {
+            TxtPergunta.Text = "";
+
             if (DgvPerguntas.Rows.Count != 0 && DgvPerguntas.Columns.Count != 0)
             {
-                TxtPergunta.Text = DgvPerguntas.Rows[DgvPerguntas.CurrentRow.Index].Cells[3].Value.ToString();
                 CarregaRespostas(Convert.ToInt32(DgvPerguntas.Rows[DgvPerguntas.CurrentRow.Index].Cells[0].Value));
                 pergunta.Id_pergunta = Convert.ToInt32(DgvPerguntas.Rows[DgvPerguntas.CurrentRow.Index].Cells[0].Value);
                 pergunta.Titulo = DgvPerguntas.Rows[DgvPerguntas.CurrentRow.Index].Cells[1].Value.ToString();
@@ -184,17 +216,20 @@ namespace HelpDesk
                 pergunta.Questao = DgvPerguntas.Rows[DgvPerguntas.CurrentRow.Index].Cells[3].Value.ToString();
                 pergunta.Pessoa = Convert.ToInt32(DgvPerguntas.Rows[DgvPerguntas.CurrentRow.Index].Cells[4].Value);
                 pergunta.Setor = Convert.ToInt32(DgvPerguntas.Rows[DgvPerguntas.CurrentRow.Index].Cells[5].Value);
+                TxtPergunta.Text += string.Format(CarregaNomeSetor(Convert.ToInt32(pergunta.Setor)) + "{0}", Environment.NewLine); ;
+                TxtPergunta.Text += DgvPerguntas.Rows[DgvPerguntas.CurrentRow.Index].Cells[3].Value.ToString();
             }
         }
         private void BtnCarregaTudo_Click(object sender, EventArgs e)
         {
             FiltrargemBotao(null);
         }
-
         private void BtnResposta_Click(object sender, EventArgs e)
         {
-            Frm_Resposta frm_Resposta = new Frm_Resposta(pergunta);
+            Frm_Resposta frm_Resposta = new Frm_Resposta(pergunta, Convert.ToInt32(LblCodigoFuncionario.Text), LblFuncionario.Text);
             frm_Resposta.ShowDialog();
+            CarregaDataGrid();
         }
+
     }
 }
